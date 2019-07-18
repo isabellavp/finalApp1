@@ -10,13 +10,25 @@ import UIKit
 
 class CompleteTaskViewController: UIViewController {
 
+    var previousVC = TasksTableTableViewController()
+    var selectedTask = Tasks()
+    
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        titleLabel.text = selectedTask.name
     }
     
-
+    @IBAction func completeTapped(_ sender: Any) {
+    
+    }
+   
+    
+    
+    
     /*
     // MARK: - Navigation
 

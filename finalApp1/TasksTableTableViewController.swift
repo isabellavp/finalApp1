@@ -55,5 +55,36 @@ class TasksTableTableViewController: UITableViewController {
     return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+        if let addVC = segue.destination as? AddTaskViewController{
+            addVC.previousVC = self
+        }
 
+        if let completeVC = segue.destination as? CompleteTaskViewController {
+            if let task = sender as? Tasks {
+                
+                completeVC.selectedTask = task
+                completeVC.previousVC = self
+        
+        
+        func tableView (_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+            let task = tasks [indexPath.row]
+            
+           performSegue(withIdentifier: "moveToComplete", sender: task)
+            
+            if let addVC = segue.destination as? AddTaskViewController {
+            addVC.previousVC = self
+
+        
+
+         
+               
+        
+    }
+   }
+  }
+ }
+}
 }
