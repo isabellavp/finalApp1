@@ -24,6 +24,7 @@ class AddTaskViewController: UIViewController {
         super.viewDidLoad()
         }
     
+  
     @IBAction func addTapped(_ sender: Any) {
         
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
@@ -37,7 +38,7 @@ class AddTaskViewController: UIViewController {
             }
             try? context.save()
   
-        previousVC.tasks.append(Tasks())
+        previousVC.tasks.append(task)
         previousVC.tableView.reloadData()
         navigationController?.popViewController(animated: true)
    
